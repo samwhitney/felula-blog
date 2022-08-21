@@ -8,6 +8,9 @@
 		case 'danger':
 			$class .= 'bg-red-500  hover:bg-red-600 ring-red-200 focus:border-red-600';
 			break;
+		case 'frontend':
+			$class .= 'bg-slate-500  hover:bg-slate-600 ring-slate-200 focus:border-slate-600';
+			break;
 		case 'primary':
 		default:
 			$class .= 'bg-indigo-500  hover:bg-indigo-600 ring-indigo-200 focus:border-indigo-600';     

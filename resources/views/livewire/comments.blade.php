@@ -13,7 +13,7 @@
 					<x-input wire:model="new.email" type="email" placeholder="Email address" />
 				</div>
 				<div>
-					<x-button type="submit">Submit Comment</x-button>
+					<x-button type="submit" format="frontend">Submit Comment</x-button>
 				</div>
 			</div>
 		</form>
