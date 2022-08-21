@@ -26,6 +26,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 	Route::get('/admin/posts', \App\Http\Livewire\Admin\Posts::class)->name('admin-posts');
 	Route::get('/admin/comments', \App\Http\Livewire\Admin\Comments::class)->name('admin-comments');
+	Route::get('/admin/users', \App\Http\Livewire\Admin\Users::class)->name('admin-users');
 
 });
 

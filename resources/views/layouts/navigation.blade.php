@@ -20,6 +20,8 @@
                     <x-nav-link :href="route('admin-comments')" :active="request()->routeIs('admin-comments')">
                         {{ __('Comments') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin-users')" :active="request()->routeIs('admin-users')">
+                        {{ __('Users') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -74,6 +76,9 @@
 			</x-responsive-nav-link>
 			<x-responsive-nav-link :href="route('admin-comments')" :active="request()->routeIs('admin-comments')">
 				{{ __('Comments') }}
+			</x-responsive-nav-link>
+			<x-responsive-nav-link :href="route('admin-users')" :active="request()->routeIs('admin-users')">
+				{{ __('Users') }}
 			</x-responsive-nav-link>
         </div>
 
