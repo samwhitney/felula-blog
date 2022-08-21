@@ -5,15 +5,18 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
+                    <a href="{{ route('admin-posts') }}">
+						<h2 class="font-bold font-playfair text-4xl text-slate-700 uppercase tracking-wide">
+							{{ __('Felula') }}
+						</h2>
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-nav-link :href="route('admin-posts')" :active="request()->routeIs('admin-posts')">
+                        {{ __('Posts') }}
+                    </x-nav-link>
                     </x-nav-link>
                 </div>
             </div>
@@ -63,9 +66,9 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
+			<x-responsive-nav-link :href="route('admin-posts')" :active="request()->routeIs('admin-posts')">
+				{{ __('Posts') }}
+			</x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
