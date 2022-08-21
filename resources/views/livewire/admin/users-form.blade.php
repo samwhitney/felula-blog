@@ -11,6 +11,9 @@
 			<x-input type="text" wire:model="email"/>
 			@error('email') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
 		</p>
-		<x-button type="submit">Save User</x-button>
+		<p class="space-x-2">
+			<x-button type="submit">Save User</x-button>
+			<x-button wire:click="close" format="danger" id="cancel" type="button">Cancel</x-button>
+		</p>
 	</form>
 </div>
