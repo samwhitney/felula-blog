@@ -1,12 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
 | Guest Routes
 |--------------------------------------------------------------------------
 */
+
+Route::get('/', \App\Http\Livewire\Blog::class)->name('blog');
+
+Route::get('/article/{post}', function (Post $post) {
+    return view('article', [ 'post' => $post] );
+})->name('article');
 
 
 /*
