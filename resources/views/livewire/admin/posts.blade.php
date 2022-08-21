@@ -7,6 +7,7 @@
 				{{ __('Posts') }}
 			</h2>
 			<p class="w-1/2 text-right space-x-2">
+				<x-button wire:click="rss" type="button" class="-my-4">Run RSS Import</x-button>
 				<x-button @click="$wire.set('view','import')" type="button" class="-my-4">Import CSV</x-button>
 				<x-button wire:click="add" type="button" class="-my-4">Add New</x-button>
 			</p>

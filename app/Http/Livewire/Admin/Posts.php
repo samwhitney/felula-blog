@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Admin;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Post;
+use App\Jobs\RssReader;
 
 class Posts extends Component
 {
@@ -64,5 +65,11 @@ class Posts extends Component
 		$this->reset('view');
 		$this->resetPage();
     }
+
+	// Option to run RSS import manually from admin
+	public function rss()
+	{
+		RssReader::dispatch();
+	}
 
 }
