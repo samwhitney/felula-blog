@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Comment;
+use App\Models\Post;
 
 class Comments extends Component
 {
@@ -14,6 +15,23 @@ class Comments extends Component
 		'email' => '',
 		'comment' => ''
 	]; // New comment array
+
+	// Enforce validation rules
+    protected function rules()
+    {
+        return [
+            'new.name' => 'required|min:3',
+            'new.email' => 'required|email',
+            'new.comment' => 'required|min:10'
+        ];
+    }
+
+	// Set user friendly names for attributes
+    protected $validationAttributes = [
+        'new.name' => 'name',
+        'new.email' => 'email',
+        'new.comment' => 'comment',
+    ];
 
 	// Load up comments on component mount
 	public function mount()
@@ -26,6 +44,7 @@ class Comments extends Component
         return view('livewire.comments');
     }
 
+	// Load comments from db
 	public function load()
 	{
 		$this->comments = Comment::select('id','name','comment','likes','created_at')->where('post_id',$this->postId)->orderBy('created_at','DESC')->get();
@@ -34,6 +53,8 @@ class Comments extends Component
 	// Create new comment
 	public function submit()
 	{
+        $this->validate();
+
 		Comment::create([
 			'post_id' => $this->postId,
 			'name' => $this->new['name'],
