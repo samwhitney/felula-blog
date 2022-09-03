@@ -23,11 +23,21 @@ class Post extends Model
         'enabled'
     ];
 
-	// Eager load the author that owns the post
+    /**
+     * Eager load the author that owns the post
+     */
 	public function author()
 	{
 		return $this->belongsTo(User::class, 'user_id');
 	}
+
+    /**
+     * Eager load the comments for the post.
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 
 	// Set the route key to be used for this model
  	public function getRouteKeyName() {
