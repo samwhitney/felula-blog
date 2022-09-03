@@ -18,7 +18,7 @@ class UsersForm extends Component
     {
 		 // Email must be unique, but add exception for current user being edited to prevent failure on updating name field
         return [
-            'name' => 'required|min:6',
+            'name' => 'required',
             'email' => 'required|email|unique:users,email,'.$this->userId
         ];
     }

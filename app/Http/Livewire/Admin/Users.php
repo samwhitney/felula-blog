@@ -36,7 +36,6 @@ class Users extends Component
         ])->layout('layouts.app');
     }
 
-
 	// Add new user
 	public function add()
 	{

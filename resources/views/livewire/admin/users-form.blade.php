@@ -1,6 +1,10 @@
 <div>
 	<form wire:submit.prevent="submit" class="w-full md:w-1/2 space-y-4">
-		<h2 class="font-semibold leading-tight text-xl text-gray-800">Add New User</h2>
+		@if(!empty($userId))
+			<h2 class="font-semibold leading-tight text-xl text-gray-800">Edit User</h2>
+		@else
+			<h2 class="font-semibold leading-tight text-xl text-gray-800">Add New User</h2>
+		@endif
 		<p>
 			<x-label>Name</x-label>
 			<x-input type="text" wire:model="name"/>

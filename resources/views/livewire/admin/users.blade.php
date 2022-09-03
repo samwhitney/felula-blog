@@ -20,6 +20,7 @@
 					@if($view == 'form')
     					@livewire('admin.users-form', [ 'userId' => $editId ])
 					@else
+						<h2 class="font-semibold leading-tight text-xl text-gray-800">All Users</h2>
 						<table class="w-full">
 							<thead class="border-b font-medium text-left">
 								<tr>
@@ -44,6 +45,9 @@
 								@endforeach
 							</tbody>
 						</table>
+						<div class="mt-6">
+							{{ $users->links() }}
+						</div>
 					@endif
 				</div>
             </div>
