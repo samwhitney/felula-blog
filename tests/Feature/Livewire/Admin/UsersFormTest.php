@@ -48,6 +48,18 @@ class UsersFormTest extends TestCase
     }
 
     /** @test  */
+    public function can_create_user()
+    {
+		// Can edit existing user
+        Livewire::test(UsersForm::class)
+			->set('name', 'test user')
+			->set('email', 'test@user.com')
+			->call('submit');
+
+		$this->assertTrue(User::whereName('test user')->exists());
+    }
+
+    /** @test  */
     public function name_is_required()
     { 
 		// Test when name is missing
