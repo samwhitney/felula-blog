@@ -31,6 +31,7 @@ class PostFactory extends Factory
         return [
             'title' => $sentence,
             'slug' => Str::slug($sentence),
+            'guid' => Str::slug($sentence),
             'content' => fake()->paragraph(),
             'enabled' => true
         ];

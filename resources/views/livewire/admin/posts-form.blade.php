@@ -1,6 +1,10 @@
 <div x-data="">
 	<form wire:submit.prevent="submit" class="w-full space-y-4">
-		<h2 class="font-semibold leading-tight text-xl text-gray-800">Add New Post</h2>
+		@if(!empty($postId))
+			<h2 class="font-semibold leading-tight text-xl text-gray-800">Edit Post</h2>
+		@else
+			<h2 class="font-semibold leading-tight text-xl text-gray-800">Add New Post</h2>
+		@endif
 		<p>
 			<x-label for="title">Title</x-label>
 			<x-input type="text" id="title" name="title" wire:model="post.title" @change="$wire.setSlug"/>
@@ -17,7 +21,7 @@
 			@if($post['image'])
 				<x-button wire:click="removeImage" type="button" format="danger">Remove Image</x-button>
 			@else
-				<input type="file" wire:model="post.image">
+				<input type="file" wire:model="post.image" accept=".jpg,.png">
 			@endif
 			@error('post.image') <span class="error">{{ $message }}</span> @enderror
 		</div>

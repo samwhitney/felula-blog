@@ -23,6 +23,7 @@
 				@elseif($view == 'form')
     				@livewire('admin.posts-form', [ 'postId' => $editId ])
 				@else
+					<h2 class="font-semibold leading-tight text-xl text-gray-800">All Posts</h2>
 					<table class="w-full">
 						<thead class="border-b font-medium text-left">
 							<tr>

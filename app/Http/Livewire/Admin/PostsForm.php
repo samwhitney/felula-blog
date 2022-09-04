@@ -26,7 +26,7 @@ class PostsForm extends Component
         return [
             'post.title' => 'required|min:6',
             'post.slug' => 'required|unique:posts,slug,'.$this->postId,
-            'post.image' => 'nullable |image|max:1024',
+            'post.image' => 'nullable|image|max:1024',
             'post.content' => 'required',
 			'post.enabled' => 'boolean'
         ];

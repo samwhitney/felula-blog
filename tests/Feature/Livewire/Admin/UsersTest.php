@@ -18,7 +18,7 @@ class UsersTest extends TestCase
     public function admin_users_page_requires_login()
     {
 		// Check component can be accessed without login
-        $this->get('/admin/users')->assertRedirect('/login');
+        $this->get(route('admin-users'))->assertRedirect('/login');
     }
 
     /** @test  */
@@ -27,7 +27,7 @@ class UsersTest extends TestCase
         $this->actingAs(User::factory()->create());
 
 		// Check livewire component is visible
-        $this->get('/admin/users')->assertSeeLivewire('admin.users');
+        $this->get(route('admin-users'))->assertSeeLivewire('admin.users');
     }
 
     /** @test  */
